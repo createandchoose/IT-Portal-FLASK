@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block body %}
+
+
+    <br><br>
+    <div class="main">
+
+        
+
+    <div class="main-title">
+        Единая платформа IT-центров
+        {{ colors }}
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <br><br><br>
+    <div class="main-text">
+        Наш проект сайт для IT-центров Республики Саха (Якутии) помогает с объединением IT-центров на территории республики, которые хотят
+        иметь доступ в сообщества в котором клиенты смогут общаться со всеми центрами сразу.
+    </div> 
+
+    <br><br><br>
+<a href="#">
+    <div class="buttons">
+        ФОРМА ЗАКАЗОВ
+    </div>
+</a>
+
+<br><br><br>
+<br><br><br>
+
+<img src="./static/images/{{ colors }}.png">
+
+<div class="land">
+        <div class="land-header">
+        Новости
+        </div>
+
+        <br><br>
+
+    
+    
+{% if articles|length > 0 %}
+
+{% for el in articles %}
+
+<div class="card">
+    <div class="card-image>">
+    <article class="news">
+    <div class="poster">
+    <img id="posterimg" width="300" height="200" src="./images/new2.jpg">
+    </div>
+    <div class="infoboxy">
+    <div class="mainname"><a href="">{{ el.title }}</a></div>
+    <p>
+        {{ el.intro }}
+    </p>
+    <div class="button">
+        <a href="/posts/{{ el.id }}" class="btn btn-green" id="lil">Перейти</a>
+    </div>
+    <div class="meta">
+    <div class="infodata">Дата: {{ el.date.date() }}</div>
+    <!-- <div class="tag">Tag:</div>
+    <div class="tag-name"><a href="#post">Desgin</a></div> -->
+    </div>
+    </div>
+    </article>
+    </div>
+</div>
+
+
+{% endfor %}
+{% else %}
+У нас ничего нет! :(
+{% endif %}
+  
+
+<br><br><br>
+<br><br><br>
+
+    <div class="land-header">
+        IT-Центры
+    </div>
+</div>
+
+<br><br><br>
+<br><br><br>
+
+		<footer class="footer-distributed">
+
+			<div class="footer-right">
+<!-- 
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a> -->
+				<a href="https://github.com/createandchoose/IT-Portal"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a class="link-1" href="#">Главная</a>
+
+					<!-- <a href="#">Заказы</a> -->
+				</p>
+
+				<p>IT-Portal &copy; 2021</p>
+			</div>
+
+		</footer>
+
+{% endblock %}

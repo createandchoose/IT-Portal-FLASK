@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/article.css') }}">
+    <script src="https://kit.fontawesome.com/47a4398e3c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <a class="logo" href="/"><img height="40" src="{{ url_for('static', filename='images/logo.svg') }}"></a>
+            <div class="right">
+            <a href="/"> ГЛАВНАЯ</a>
+            <a href="/posts">НОВОСТИ</a>
+            <a href="/create-article">СОЗДАТЬ НОВОСТЬ</a>
+            <a href="/profile">ПРОФИЛЬ</a>
+            </div>
+        </div>  
+    </header>
+    {% block body %}{% endblock %}
+</body>
+</html>

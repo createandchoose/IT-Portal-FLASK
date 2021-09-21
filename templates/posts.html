@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пост
+{% endblock %}
+
+{% block body %}
+<div class="land">
+{% if articles|length > 0 %}
+
+{% for el in articles %}
+
+<div class="card">
+    <div class="card-image>">
+    <article class="news">
+    <div class="poster">
+    <img id="posterimg" width="300" height="200" src="./images/new2.jpg">
+    </div>
+    <div class="infoboxy">
+    <div class="mainname"><a href="">{{ el.title }}</a></div>
+    <p>
+        {{ el.intro }}
+    </p>
+    <div class="button">
+        <a href="/posts/{{ el.id }}" class="btn btn-green" id="lil">Перейти</a>
+    </div>
+    <div class="meta">
+    <div class="infodata">Дата: {{ el.date.date() }}</div>
+    <!-- <div class="tag">Tag:</div>
+    <div class="tag-name"><a href="#post">Desgin</a></div> -->
+    </div>
+    </div>
+    </article>
+    </div>
+</div>
+
+
+{% endfor %}
+{% else %}
+У нас ничего нет! :(
+{% endif %}
+</div>
+
+{% endblock %}
+
+
+

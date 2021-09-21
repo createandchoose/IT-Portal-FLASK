@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Обновление статьи
+{% endblock %}
+
+{% block body %}
+<a href="/">Home</a>
+<h1>Обновление статьи</h1>
+<form method="post">
+    <input type="text" name="title" id="title" value="{{ article.title }}" placeholder="название"> <br>
+    <textarea name="intro" id="intro" placeholder="анонс">{{ article.intro }}</textarea> <br>
+    <textarea name="text" id="text" placeholder="основной текст">{{ article.text }}</textarea> <br>
+    <input type="submit" value="Обнвить"> <br>
+</form>
+{% endblock %}
